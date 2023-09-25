@@ -23,7 +23,14 @@ public class FizzBuzzGameUi
 
     private GameSpecification CreateGameSpecification()
     {
-        return null;
+        SortedList<int, GameRule> gameRules = new();
+        GameRule gameRule1 = new(new int[2]{ 3, 5 }, Operator.And);
+        GameRule gameRule2 = new(3);
+        GameRule gameRule3 = new(5);
+        gameRules.Add(1, gameRule1);
+        gameRules.Add(2, gameRule2);
+        gameRules.Add(3, gameRule3);
+        return new GameSpecification(gameRules);
     }
 
     private int GetNumber()
